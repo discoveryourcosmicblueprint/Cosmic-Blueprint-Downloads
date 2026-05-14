@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Blueprint - Complete Numerology & Astrology Readings</title>
+    <meta name="description" content="Discover your cosmic blueprint through detailed numerology, astrology, chakra readings, and destiny matrix analysis.">
+    <meta name="author" content="Spencer McGee">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Calculating your cosmic blueprint...</p>
+            <div class="loading-steps">
+                <span class="step" data-step="1">Analyzing birth date vibrations</span>
+                <span class="step" data-step="2">Decoding name frequencies</span>
+                <span class="step" data-step="3">Mapping destiny matrix</span>
+                <span class="step" data-step="4">Calculating chakra energies</span>
+                <span class="step" data-step="5">Determining planetary positions</span>
+                <span class="step" data-step="6">Analyzing house placements</span>
+                <span class="step" data-step="7">Computing aspects</span>
+                <span class="step" data-step="8">Integrating cosmic data</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <div class="stars"></div>
+            <div class="constellation"></div>
+            <div class="floating-symbols" id="floating-symbols"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-badge">✦ Complete Numerology & Astrology ✦</span>
+            <h1 class="hero-title">Discover Your<br><span class="highlight">Cosmic Blueprint</span></h1>
+            <p class="hero-subtitle">
+                Unlock the profound secrets encoded in your birth date and name.
+                Experience comprehensive numerology with all five core numbers,
+                complete astrology with planets, houses, and aspects,
+                full chakra analysis, and destiny matrix insights.
+            </p>
+            <div class="cta-buttons">
+                <button class="cta-button primary" onclick="scrollToForm()">
+                    <span>Begin Your Journey</span>
+                    <span>→</span>
+                </button>
+                <a href="#reviews-section" class="cta-button secondary">
+                    <span>Read Reviews</span>
+                </a>
+            </div>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🔢</span>
+                    <span>5 Core Numbers</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">⭐</span>
+                    <span>Full Astrology</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">✨</span>
+                    <span>Destiny Matrix</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🌈</span>
+                    <span>7 Chakras</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">💕</span>
+                    <span>Compatibility</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📅</span>
+                    <span>Timing & Transits</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Input Form Section -->
+    <section id="input-section" class="input-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Your Cosmic Information</span>
+                <h2 class="section-title">Enter Your Birth Details</h2>
+                <p class="section-description">
+                    Your birth date carries vibrational frequencies, your name encodes your destiny,
+                    and the exact moment of your birth reveals your complete astrological blueprint.
+                </p>
+            </div>
+            
+            <form id="numerology-form" class="numerology-form">
+                <!-- Birth Date -->
+                <div class="form-group">
+                    <label>Birth Date <span class="required">*</span></label>
+                    <div class="date-inputs">
+                        <select id="birth-month" required aria-label="Birth Month">
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select id="birth-day" required aria-label="Birth Day">
+                            <option value="">Day</option>
+                        </select>
+                        <select id="birth-year" required aria-label="Birth Year">
+                            <option value="">Year</option>
+                        </select>
+                    </div>
+                    <span class="input-hint">The day you entered this world holds profound cosmic significance</span>
+                </div>
+
+                <!-- Birth Time -->
+                <div class="form-group">
+                    <label>Birth Time <span class="optional-tag">(Highly recommended for accurate Rising sign)</span></label>
+                    <div class="time-inputs">
+                        <select id="birth-hour" aria-label="Birth Hour">
+                            <option value="">Hour</option>
+                            <option value="0">12:00 AM (Midnight)</option>
+                            <option value="1">1:00 AM</option>
+                            <option value="2">2:00 AM</option>
+                            <option value="3">3:00 AM</option>
+                            <option value="4">4:00 AM</option>
+                            <option value="5">5:00 AM</option>
+                            <option value="6">6:00 AM</option>
+                            <option value="7">7:00 AM</option>
+                            <option value="8">8:00 AM</option>
+                            <option value="9">9:00 AM</option>
+                            <option value="10">10:00 AM</option>
+                            <option value="11">11:00 AM</option>
+                            <option value="12">12:00 PM (Noon)</option>
+                            <option value="13">1:00 PM</option>
+                            <option value="14">2:00 PM</option>
+                            <option value="15">3:00 PM</option>
+                            <option value="16">4:00 PM</option>
+                            <option value="17">5:00 PM</option>
+                            <option value="18">6:00 PM</option>
+                            <option value="19">7:00 PM</option>
+                            <option value="20">8:00 PM</option>
+                            <option value="21">9:00 PM</option>
+                            <option value="22">10:00 PM</option>
+                            <option value="23">11:00 PM</option>
+                        </select>
+                        <select id="birth-minute" aria-label="Birth Minute">
+                            <option value="">Minute</option>
+                            <option value="0">:00</option>
+                            <option value="15">:15</option>
+                            <option value="30">:30</option>
+                            <option value="45">:45</option>
+                        </select>
+                        <input type="text" id="birth-location" placeholder="Birth City" aria-label="Birth Location">
+                    </div>
+                    <span class="input-hint">Birth time enables precise Rising sign and house calculations</span>
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="full-name">Full Birth Name <span class="required">*</span></label>
+                    <input type="text" id="full-name" placeholder="Enter your full name as it appears on your birth certificate" required>
+                    <span class="input-hint">Your birth name determines Destiny, Soul Urge, and Personality numbers</span>
+                </div>
+
+                <!-- Current Name -->
+                <div class="form-group optional">
+                    <label for="current-name">Current Name <span class="optional-tag">(If different from birth name)</span></label>
+                    <input type="text" id="current-name" placeholder="The name you currently use">
+                    <span class="input-hint">Your current name creates additional vibrational influences</span>
+                </div>
+
+                <button type="submit" class="submit-button" id="submit-btn">
+                    <span>Generate My Complete Cosmic Reading</span>
+                    <span>✨</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results-section" class="results-section hidden">
+        <div class="container">
+            <!-- Results Header -->
+            <div class="results-header">
+                <span class="results-tag">Your Complete Cosmic Blueprint</span>
+                <h2 class="results-name" id="user-name-display"></h2>
+                <p class="results-birthdate" id="user-birthdate-display"></p>
+                <div class="results-zodiac" id="user-zodiac-display"></div>
+                <div id="calculation-breakdown" class="calculation-display hidden"></div>
+            </div>
+
+            <!-- Core Numbers Overview -->
+            <div class="core-numbers-section">
+                <h3 class="subsection-title">Your Core Numerology Numbers</h3>
+                <p class="subsection-description">
+                    These five numbers form the foundation of your numerological identity.
+                </p>
+                <div class="numbers-grid" id="core-numbers-grid"></div>
+            </div>
+
+            <!-- Essence Summary -->
+            <div class="essence-section">
+                <h3 class="subsection-title">The Essence of Who You Are</h3>
+                <div class="essence-content" id="essence-content"></div>
+            </div>
+
+            <!-- Astrology Section -->
+            <div class="astrology-section">
+                <h3 class="subsection-title">Your Complete Astrological Profile</h3>
+                <p class="subsection-description">
+                    The celestial bodies at your birth create a unique cosmic fingerprint.
+                </p>
+                <div class="astro-grid" id="astrology-grid"></div>
+                <div class="astro-details-extended" id="astro-extended"></div>
+            </div>
+
+            <!-- Destiny Matrix Visual -->
+            <div class="matrix-section">
+                <h3 class="subsection-title">Your Destiny Matrix</h3>
+                <p class="subsection-description">
+                    The Destiny Matrix reveals karmic energies, talents, and life purposes.
+                </p>
+                <div class="matrix-container">
+                    <div class="matrix-visual" id="destiny-matrix"></div>
+                    <div class="matrix-legend" id="matrix-legend"></div>
+                </div>
+            </div>
+
+            <!-- Chakra Energy Section -->
+            <div class="chakra-section">
+                <h3 class="subsection-title">Your Complete Chakra Energy Reading</h3>
+                <div class="chakra-intro">
+                    <p>Your birth date creates a unique energetic signature across your seven chakras.</p>
+                </div>
+                <div class="chakra-grid" id="chakra-grid"></div>
+                <div class="chakra-totals" id="chakra-totals"></div>
+            </div>
+
+            <!-- Detailed Readings Tabs -->
+            <div class="detailed-readings">
+                <h3 class="subsection-title">Detailed Analysis</h3>
+                <div class="reading-tabs" id="reading-tabs">
+                    <button class="tab-button active" data-tab="life-path">Life Path</button>
+                    <button class="tab-button" data-tab="destiny">Destiny</button>
+                    <button class="tab-button" data-tab="soul-urge">Soul Urge</button>
+                    <button class="tab-button" data-tab="personality">Personality</button>
+                    <button class="tab-button" data-tab="birthday">Birthday</button>
+                    <button class="tab-button" data-tab="master">Master Numbers</button>
+                    <button class="tab-button" data-tab="matrix">Matrix Detail</button>
+                    <button class="tab-button" data-tab="chakras">Chakras</button>
+                    <button class="tab-button" data-tab="astrology">Full Astrology</button>
+                    <button class="tab-button" data-tab="patterns">Patterns</button>
+                    <button class="tab-button" data-tab="timing">Timing</button>
+                    <button class="tab-button" data-tab="spiritual">Spiritual</button>
+                    <button class="tab-button" data-tab="integrated">Integrated</button>
+                </div>
+                <div class="tab-contents">
+                    <div id="life-path-content" class="tab-content active"></div>
+                    <div id="destiny-content" class="tab-content"></div>
+                    <div id="soul-urge-content" class="tab-content"></div>
+                    <div id="personality-content" class="tab-content"></div>
+                    <div id="birthday-content" class="tab-content"></div>
+                    <div id="master-content" class="tab-content"></div>
+                    <div id="matrix-content" class="tab-content"></div>
+                    <div id="chakras-content" class="tab-content"></div>
+                    <div id="astrology-content" class="tab-content"></div>
+                    <div id="patterns-content" class="tab-content"></div>
+                    <div id="timing-content" class="tab-content"></div>
+                    <div id="spiritual-content" class="tab-content"></div>
+                    <div id="integrated-content" class="tab-content"></div>
+                </div>
+            </div>
+
+            <!-- Reflection Questions -->
+            <div class="reflection-section">
+                <h3 class="subsection-title">Questions for Deep Reflection</h3>
+                <div class="reflection-questions" id="reflection-questions"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-button secondary" onclick="toggleCalculations()">
+                    <span>🔢</span> Show Calculations
+                </button>
+                <button class="action-button secondary" onclick="window.print()">
+                    <span>📄</span> Print / Save PDF
+                </button>
+                <button class="action-button secondary" onclick="shareReading()">
+                    <span>🔗</span> Share Reading
+                </button>
+                <button class="action-button primary" onclick="startNewReading()">
+                    <span>✨</span> New Reading
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compatibility Section -->
+    <section id="compatibility-section" class="compatibility-section hidden">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Relationship Insights</span>
+                <h2 class="section-title">Compatibility Analysis</h2>
+                <p class="section-description">
+                    Discover how your numbers and stars align with someone special.
+                </p>
+            </div>
+            
+            <form id="compatibility-form" class="compatibility-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Partner's Birth Date</label>
+                        <div class="date-inputs">
+                            <select id="partner-month" required>
+                                <option value="">Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                            <select id="partner-day" required>
+                                <option value="">Day</option>
+                            </select>
+                            <select id="partner-year" required>
+                                <option value="">Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="partner-name">Partner's Full Name</label>
+                        <input type="text" id="partner-name" placeholder="Enter their full birth name" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">
+                    <span>Analyze Our Compatibility</span>
+                    <span>💕</span>
+                </button>
+            </form>
+            
+            <div id="compatibility-results" class="compatibility-results hidden"></div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews-section" class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Community Testimonials</span>
+                <h2 class="section-title">What Others Are Saying</h2>
+            </div>
+            <div class="reviews-grid" id="reviews-grid"></div>
+            
+            <div class="review-form">
+                <h4>Share Your Experience</h4>
+                <p class="review-form-desc">Your review helps others discover their cosmic blueprint</p>
+                <div class="star-rating" id="star-rating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="review-name" placeholder="Your name" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <textarea id="review-text" placeholder="Share your experience..." maxlength="500"></textarea>
+                    <span class="char-count"><span id="char-count">0</span>/500</span>
+                </div>
+                <button class="submit-button" type="button" onclick="submitReview()">
+                    <span>Submit Review</span>
+                    <span>⭐</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Cosmic Blueprint</h3>
+                    <p>Comprehensive numerology and astrology readings combining ancient wisdom with modern insights.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="#" onclick="showModal('about-numerology'); return false;">About Numerology</a></li>
+                        <li><a href="#" onclick="showModal('about-astrology'); return false;">About Astrology</a></li>
+                        <li><a href="#" onclick="showModal('about-chakras'); return false;">About Chakras</a></li>
+                        <li><a href="#" onclick="showModal('about-matrix'); return false;">About Destiny Matrix</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" onclick="showModal('master-numbers'); return false;">Master Numbers Guide</a></li>
+                        <li><a href="#" onclick="showModal('zodiac-guide'); return false;">Zodiac Sign Guide</a></li>
+                        <li><a href="#" onclick="showModal('compatibility-guide'); return false;">Compatibility Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#" onclick="showModal('faq'); return false;">FAQ</a></li>
+                        <li><a href="#" onclick="showModal('privacy'); return false;">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cosmic Blueprint. All readings are for entertainment and self-reflection purposes.</p>
+                <p class="creator-credit">✨ Created with love by <strong>Spencer McGee</strong> ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden" onclick="if(event.target===this)closeModal()">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/zodiac-data.js"></script>
+    <script src="data/numerology-data.js"></script>
+    <script src="data/arcana-data.js"></script>
+    <script src="data/chakra-data.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/display.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
